@@ -1,0 +1,61 @@
+.jhalar-footer {
+  width: 100%;
+  overflow: hidden;
+  background: linear-gradient(-45deg, #FF69B4, #FFB6C1, #FFC0CB, #FFDDEE) !important;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.jhalar {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  width: 100%;
+  padding: 8px 0;
+  gap: 6px;
+}
+
+/* Each hanging bead */
+.jhalar span {
+  width: 6px;
+  height: 18px;
+  border-radius: 50px;
+  background: linear-gradient(180deg, #ffe6f0, #ffb6c1, #ff69b4);
+  box-shadow: 0 0 8px rgba(255, 182, 193, 0.8),
+              inset 0 0 4px rgba(255, 255, 255, 0.9);
+  animation: shine 2s ease-in-out infinite alternate,
+             swing 1.8s ease-in-out infinite;
+  transform-origin: top center;
+}
+
+/* Subtle shine movement */
+@keyframes shine {
+  0% {
+    box-shadow: 0 0 5px rgba(255, 182, 193, 0.6),
+                inset 0 0 2px rgba(255, 255, 255, 0.8);
+    opacity: 0.9;
+  }
+  100% {
+    box-shadow: 0 0 12px rgba(255, 105, 180, 0.9),
+                inset 0 0 6px rgba(255, 255, 255, 1);
+    opacity: 1;
+  }
+}
+
+/* Gentle swing animation */
+@keyframes swing {
+  0%, 100% {
+    transform: rotate(4deg);
+  }
+  50% {
+    transform: rotate(-4deg);
+  }
+}
+
+/* Alternate shine colors for depth */
+.jhalar span:nth-child(odd) {
+  background: linear-gradient(180deg, #fff0f5, #ffc0cb, #ff69b4);
+  animation-delay: 0.3s;
+}

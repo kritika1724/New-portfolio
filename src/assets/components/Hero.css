@@ -1,0 +1,136 @@
+/* Hero Section Background */
+.hero-section {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(-45deg, #FF69B4, #FFB6C1, #FFC0CB, #FFDDEE) !important; /* pink gradient */
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+  color: white;
+}
+
+/* Gradient Animation */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Hero Text Animations */
+.hero-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: white; 
+  animation: fadeUp 1.2s ease forwards;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: white;
+  opacity: 0;
+  animation: fadeUp 1.2s ease 0.5s forwards;
+}
+
+.hero-btn {
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  border: 2px solid #1e90ff;
+  color: white;
+  background: transparent;
+  transition: all 0.3s ease;
+  opacity: 0;
+  animation: fadeUp 1.2s ease 1s forwards;
+}
+
+.hero-btn:hover {
+  background: #0d6efd;
+  color: white;
+  transform: scale(1.1);
+}
+
+/* Fade Up Animation */
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Floating Particles */
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.particles span {
+  position: absolute;
+  display: block;
+  width: 8px;
+  height: 8px;
+  background: rgba(30,144,255,0.6);
+  border-radius: 50%;
+  animation: float 10s linear infinite;
+}
+
+/* Random positions and speeds */
+.particles span:nth-child(1) { left: 10%; animation-duration: 8s; }
+.particles span:nth-child(2) { left: 25%; animation-duration: 12s; }
+.particles span:nth-child(3) { left: 40%; animation-duration: 10s; }
+.particles span:nth-child(4) { left: 60%; animation-duration: 14s; }
+.particles span:nth-child(5) { left: 75%; animation-duration: 11s; }
+.particles span:nth-child(6) { left: 90%; animation-duration: 13s; }
+
+/* Particle float animation */
+@keyframes float {
+  0% { transform: translateY(100vh) translateX(0); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(-10vh) translateX(20px); opacity: 0; }
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+  animation-delay: 0.2s;
+}
+
+.skill-card {
+  border: 2px solid #fff;
+  padding: 15px 25px;
+  border-radius: 15px;
+  font-size: 1.1rem;
+  transform: translateY(-50px);
+  opacity: 0;
+  animation: floatIn 0.6s forwards;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes floatIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
