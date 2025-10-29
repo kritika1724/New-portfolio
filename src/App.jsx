@@ -12,7 +12,7 @@ export default function App() {
 
     <div className="font-sans text-slate-900">
       <Header />
-      <Hero /> 
+      <Hero/>
       <JhalarFooter/>
       <About />
       <JhalarFooter/>

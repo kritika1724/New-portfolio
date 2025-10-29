@@ -4,9 +4,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 export default function Projects() {
   const projects = [
     {
-      title: "E-Commerce Website for Kannauj Attars (In Progress)",
+      title: "E-Commerce Website (In Progress)",
       description:
-        "A full-stack e-commerce website for Kannauj Attars with real-time product listings, secure user authentication, cart management, and payment integration. Frontend built in EJS templates. Currently adding advanced features and prepping deployment.",
+        "A full-stack e-commerce website  with real-time product listings, secure user authentication, cart management, and payment integration. Frontend built in EJS templates. Currently adding advanced features and prepping deployment.",
       techStack: "EJS, Node.js, Express.js, MongoDB, Bootstrap, AWS",
       status: "In Progress",
       link: "#",
