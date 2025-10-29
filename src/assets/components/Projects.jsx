@@ -13,7 +13,7 @@ export default function Projects() {
       color: "rgba(255, 182, 193, 0.2)",
     },
     {
-      title: "Full-Stack Stock Monitoring Tool (In progress)",
+      title: "Full-Stack Stock Monitoring Tool",
       description:
         "Built a stock-tracking app with real-time data, secure authentication, and MongoDB integration. Added unit tests (Jest) and prepping AWS deployment.",
       techStack: "React.js, Node.js, Express.js, MongoDB, Bootstrap",
