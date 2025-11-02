@@ -123,3 +123,70 @@
   0% { opacity: 0; transform: translateY(30px); }
   100% { opacity: 1; transform: translateY(0); }
 }
+
+.hobbies-section {
+  position: relative;
+  background: linear-gradient(-45deg, #FF69B4, #FFB6C1, #FFC0CB, #FFDDEE);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+  overflow: hidden;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.hobby-card {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 2px solid white;
+  transition: all 0.4s ease-in-out;
+}
+
+.hobby-card:hover {
+  box-shadow: 0 0 25px rgba(255, 182, 193, 0.8),
+              0 0 50px rgba(255, 192, 203, 0.5);
+  transform: translateY(-5px);
+}
+
+.hobby-particles span {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  box-shadow: 0 0 10px #ffb6c1, 0 0 20px #ffc0cb;
+  animation: floatUp 8s linear infinite;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-120vh); opacity: 0; }
+}
+
+.hobby-floating-icons span {
+  position: absolute;
+  font-size: 1.2rem;
+  animation: floatStar 5s ease-in-out infinite;
+}
+
+@keyframes floatStar {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(-15px) rotate(10deg); }
+}
+.hobby-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hobby-card img {
+  height: 180px; /* or whatever height fits your layout */
+  object-fit: cover;
+}
+
+.card-body {
+  flex-grow: 1;
+}

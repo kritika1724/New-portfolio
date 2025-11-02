@@ -1,15 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./Hero.css"; 
+import "./Hero.css";
+// eslint-disable-next-line no-unused-vars
+import { motion } from "framer-motion";
 
 export default function Skills() {
-  const [loaded, setLoaded] = useState(false);
-
-  useEffect(() => {
-    // Trigger animation after page load
-    setTimeout(() => setLoaded(true), 200);
-  }, []);
-
   const skills = [
     { name: "HTML5", color: "#FFF5EE" },
     { name: "CSS3", color: "#F0F8FF" },
@@ -27,8 +22,27 @@ export default function Skills() {
     { name: "Git & GitHub", color: "#E8F0FE" },
   ];
 
+  const containerVariant = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.15 },
+    },
+  };
+
+  const cardVariant = {
+    hidden: { opacity: 0, scale: 0.6, y: 30 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
+  };
+
   return (
-    <section id="skills"
+    <section
+      id="skills"
       className="hero-section d-flex align-items-center py-5"
       style={{
         minHeight: "100vh",
@@ -38,36 +52,58 @@ export default function Skills() {
       }}
     >
       {/* Floating Particles */}
-      <div className="particles">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
+      <div className="particles" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span><span></span>
       </div>
 
       <div className="container text-center text-white">
-        <h2 className="text-primary fw-bold mb-4">Skills</h2>
-        <div className="row g-4 justify-content-center">
+        {/* Animated Heading */}
+        <motion.h2
+          className="text-primary fw-bold mb-4"
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          Skills
+        </motion.h2>
+
+        {/* Animated Grid */}
+        <motion.div
+          className="row g-4 justify-content-center"
+          variants={containerVariant}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
           {skills.map((skill, index) => (
-            <div className="col-6 col-sm-4 col-md-3" key={index}>
-              <div
-                className={`card shadow-sm skill-card ${loaded ? "show" : ""}`}
+            <motion.div
+              className="col-6 col-sm-4 col-md-3"
+              key={index}
+              variants={cardVariant}
+              whileHover={{
+                scale: 1.1,
+                boxShadow: "0 0 20px rgba(30,144,255,0.8)",
+              }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <motion.div
+                className="card skill-card shadow-sm"
                 style={{
                   backgroundColor: skill.color,
-                  border: "2px solid white",
+                  border: "2px solid rgba(255,255,255,0.8)",
                   color: "#1e90ff",
-                  animationDelay: `${index * 0.3}s`,
+                  borderRadius: "15px",
+                  transition: "all 0.3s ease",
                 }}
               >
-                <div className="card-body">
-                  <p className="mb-0 fw-bold">{skill.name}</p>
+                <div className="card-body py-4">
+                  <p className="mb-0 fw-bold fs-5">{skill.name}</p>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

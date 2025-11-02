@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"; // ✅ Import Link from react-router-dom
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
@@ -19,12 +20,15 @@ export default function Header() {
     >
       <div className="container">
         {/* Logo / Name */}
-        <a className="navbar-brand fw-bold fs-4 text-gradient" href="#">
+        <Link className="navbar-brand fw-bold fs-4 text-gradient" to="/">
           Kritika Trivedi
-        </a>
+        </Link>
+
+        {/* Firefly Animation */}
         {[...Array(40)].map((_, i) => (
           <div key={i} className="firefly"></div>
         ))}
+
         {/* Toggler for mobile */}
         <button
           className="navbar-toggler"
@@ -44,9 +48,9 @@ export default function Header() {
             {["About", "Education", "Skills", "Projects", "Hobbies"].map(
               (item) => (
                 <li className="nav-item" key={item}>
-                  <a
+                  <Link
                     className="nav-link px-3"
-                    href={`#${item.toLowerCase()}`}
+                    to={`/${item.toLowerCase()}`}
                     style={{
                       color: "rgba(255,255,255,0.85)",
                       transition: "all 0.3s ease",
@@ -57,16 +61,16 @@ export default function Header() {
                     }
                   >
                     {item}
-                  </a>
+                  </Link>
                 </li>
               )
             )}
 
-            {/* Added Links */}
+            {/* External Links */}
             <li className="nav-item">
               <a
                 className="nav-link px-3"
-                href="https://leetcode.com/u/kritika2117/" 
+                href="https://leetcode.com/u/kritika2117/"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
@@ -81,6 +85,7 @@ export default function Header() {
                 LeetCode
               </a>
             </li>
+
             <li className="nav-item">
               <a
                 className="nav-link px-3"

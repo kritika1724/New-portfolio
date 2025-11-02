@@ -1,3 +1,4 @@
+import { Routes, Route } from "react-router-dom";
 import Header from "./assets/components/Header";
 import Hero from "./assets/components/Hero";
 import Projects from "./assets/components/Projects";
@@ -6,23 +7,22 @@ import Skills from "./assets/components/Skills";
 import Education from "./assets/components/Education";
 import Hobbies from "./assets/components/Hobbies";
 import Footer from "./assets/components/Footer";
-import JhalarFooter from "./assets/components/JhalarFooter";
+import ScrollToTop from "./assets/components/ScrollToTop";
 export default function App() {
   return (
-
     <div className="font-sans text-slate-900">
+       <ScrollToTop />
       <Header />
-      <Hero/>
-      <JhalarFooter/>
-      <About />
-      <JhalarFooter/>
-      <Education />
-      <JhalarFooter/>
-      <Skills/>
-      <JhalarFooter/>
-      <Projects />
-      <JhalarFooter/>
-      <Hobbies />
+     
+      <Routes>
+        <Route path="/" element={<Hero />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/education" element={<Education />} />
+        <Route path="/skills" element={<Skills />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/hobbies" element={<Hobbies />} />
+      </Routes>
+      
       <Footer />
     </div>
   );
