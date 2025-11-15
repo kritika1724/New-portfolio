@@ -132,21 +132,7 @@ export default function About() {
                   🚀 View My Work
                 </motion.a>
 
-                <motion.a
-  href="/Kritika_Trivedi_Resume.pdf"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="btn px-4 py-2 rounded-pill fw-semibold"
-  style={{
-    background: "linear-gradient(90deg, rgba(30,144,255,0.8), rgba(65,105,225,0.8))",
-    color: "white",
-    border: "none",
-  }}
-  whileHover={{ scale: 1.04 }}
-  whileTap={{ scale: 0.98 }}
->
-  📄 View Resume
-</motion.a>
+                
 
 
               </div>

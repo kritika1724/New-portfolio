@@ -13,7 +13,6 @@ export default function App() {
     <div className="font-sans text-slate-900">
        <ScrollToTop />
       <Header />
-     
       <Routes>
         <Route path="/" element={<Hero />} />
         <Route path="/about" element={<About />} />
